@@ -17,21 +17,25 @@
 <?php include('oeuvres.php'); ?>
 
 <!-- boucle -> if (id tableau == id url) then echo contenu -->
-<?php $GETid = $_GET['id'] - 1; ?>
-
-<article id="detail-oeuvre">
+<?php
+for ($id = 0; $id <= 15; $id++)
+{
+    if ($id == $_GET['id'] - 1) { ?> 
+    <article id="detail-oeuvre">
         <div id="img-oeuvre">
-            <img src="<?php echo $oeuvres[$GETid]['image']; ?>" alt="<?php echo $oeuvres[$GETid]['alt']; ?>">
+            <img src="<?php echo $oeuvres[$id]['image']; ?>" alt="<?php echo $oeuvres[$id]['alt']; ?>">
         </div>
         <div id="contenu-oeuvre">
-            <h1><?php echo $oeuvres[$GETid]['titre']; ?></h1>
-            <p class="description"><?php echo $oeuvres[$GETid]['description']; ?></p>
+            <h1><?php echo $oeuvres[$id]['titre']; ?></h1>
+            <p class="description"><?php echo $oeuvres[$id]['description']; ?></p>
             <p class="description-complete">
-            <?php echo $oeuvres[$GETid]['description-complete']; ?>
+            <?php echo $oeuvres[$id]['description-complete']; ?>
             </p>
         </div>
-</article>
-
+    </article> <?php
+    };
+}; ?>
+    
 </main>
 
 <?php include('footer.php'); ?>
