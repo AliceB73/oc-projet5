@@ -17,11 +17,10 @@
 <?php include('oeuvres.php'); ?>
 
 <!-- boucle -> if (id tableau == id url) then echo contenu -->
-<?php $GETid = $_GET['id'] - 1; ?>
 <?php
 for ($id = 0; $id <= 15; $id++)
 {
-    if ($id == $GETid) { ?> 
+    if ($id == $_GET['id'] - 1) { ?> 
     <article id="detail-oeuvre">
         <div id="img-oeuvre">
             <img src="<?php echo $oeuvres[$id]['image']; ?>" alt="<?php echo $oeuvres[$id]['alt']; ?>">
